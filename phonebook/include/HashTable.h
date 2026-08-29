@@ -10,9 +10,9 @@ class HashTable {
     public: 
         explicit HashTable(size_t bucketCount = 16); //Prevents implicit conversion, It is a Constructor used to initialize a vector with default 16  buckets
 
-        void insert(shared_ptr<Contact>& contact); //Used to insert new contact, hashes phone number to find target element, scan for duplicates and append the contact
+        void insert(const shared_ptr<Contact>& contact); //Used to insert new contact, hashes phone number to find target element, scan for duplicates and append the contact
         shared_ptr<Contact> find(const string& phone) const; //Hashes requested Phone Number, navigates to corresponding element index by traversing the linked list, returns shared ptr if found else null
-        bool remove(string& phone); //Removes Number, Searches for phone number at designated element and unlinks the node from the chain, triggering unique_ptr to free memory
+        bool remove(const string& phone); //Removes Number, Searches for phone number at designated element and unlinks the node from the chain, triggering unique_ptr to free memory
         size_t size() const {return numElements;} // Returns total elements
         size_t bucketCountValue() const { return buckets.size();} //Returns size of vector
 

@@ -9,7 +9,7 @@ Trie::Trie() : root(make_unique<TrieNode>()) {} //Initialize contructor with roo
 
 //Used to convert all into lowercase
 string normalize(const string& s) {
-    string out = "";
+    string out = s;
     transform(out.begin(), out.end(), out.begin(), [](unsigned char c) { return tolower(c); }); //Iterates through each letter to make lowercase using lambda function
     return out;
 }

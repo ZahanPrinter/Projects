@@ -10,7 +10,7 @@ using namespace std;
 class Trie{
     public:
         Trie(); //Constructor
-        void insert(shared_ptr<Contact>& contact); //Insert values into the trie
+        void insert(const shared_ptr<Contact>& contact); //Insert values into the trie
         vector<shared_ptr<Contact>> searchPrefix(const string& prefix) const; //Constant function that returns all names starting with a given prefix
         bool remove(const string& name, const string& number); //Returns true if deleting a node was successful
     private: 

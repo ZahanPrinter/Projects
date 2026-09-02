@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const string DATA_STREAM = "contacts.csv";
+const string DATA_STREAM = "src/contacts.csv";
 
 void printMenu() {
     std::cout << "\n===== Phone Book (Hash Table + Trie + BST) =====\n"
@@ -54,7 +54,7 @@ int main() {
         getline(cin,choiceString);
         int choice = 0;
         try {
-            stoi(choiceString);
+            choice = stoi(choiceString);
         }
         catch(...) {
             cout<<"Please enter a number between 1-9.";

@@ -1,4 +1,4 @@
-#include "include\PhoneBook.h"
+#include "PhoneBook.h"
 #include <sstream>
 #include <fstream>
 #include <iostream>
@@ -6,7 +6,7 @@
 using namespace std;
 
 //Insert Contact into HashTable, Trie and BST
-bool PhoneBook::addContact(const string& name, const string& phone, const string& email = "", const string& address = "") {
+bool PhoneBook::addContact(const string& name, const string& phone, const string& email, const string& address) {
     if(hashTable.find(phone)) return false;
 
     auto contact = make_shared<Contact>(name, phone, email, address);
@@ -28,6 +28,7 @@ bool PhoneBook::removeContact(const string& phone) {
     hashTable.remove(phone);
     trie.remove(name, phone);
     bst.remove(name, phone);
+    return true;
 }
 
 //Finds Contact using phone number and updates details in BST and Trie accordingly

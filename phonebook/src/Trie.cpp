@@ -1,4 +1,4 @@
-#include "include\Trie.h"
+#include "Trie.h"
 #include <algorithm>
 #include <string>
 #include <cctype>
@@ -8,7 +8,7 @@ using namespace std;
 Trie::Trie() : root(make_unique<TrieNode>()) {} //Initialize contructor with root node
 
 //Used to convert all into lowercase
-string normalize(const string& s) {
+string Trie::normalize(const string& s) {
     string out = s;
     transform(out.begin(), out.end(), out.begin(), [](unsigned char c) { return tolower(c); }); //Iterates through each letter to make lowercase using lambda function
     return out;

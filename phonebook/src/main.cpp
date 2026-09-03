@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const string DATA_STREAM = "src/contacts.csv";
+const string DATA_STREAM = "contacts.csv";
 
 void printMenu() {
     std::cout << "\n===== Phone Book (Hash Table + Trie + BST) =====\n"
@@ -122,6 +122,7 @@ int main() {
             case 9: {
                 book.saveToFile(DATA_STREAM);
                 cout<<"Saved, Goodbye."<<endl;
+                return 0;
                 break;
             }
             default :

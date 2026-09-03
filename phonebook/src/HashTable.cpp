@@ -48,13 +48,13 @@ void HashTable::insert(const shared_ptr<Contact>& contact) {
 
     //Check if already exists and update
     Node* current = buckets[index].get();
-    if(current->contact->phone == contact->phone) {
-        while(current) {
-            current->contact = contact;
-            return;
-        }
-        current = current->next.get();
+    while (current) {
+    if (current->contact->phone == contact->phone) {
+        current->contact = contact;  // update existing entry
+        return;
     }
+    current = current->next.get();   // only advance if this one didn't match
+}
 
     //Initiate new Node and assign contact to it
     auto newNode = make_unique<Node>();

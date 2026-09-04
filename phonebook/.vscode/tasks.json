@@ -9,6 +9,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "-std=c++17",
+                "-O2",
                 "-static",
                 "-I${workspaceFolder}/include",
                 "${workspaceFolder}/src/main.cpp",
